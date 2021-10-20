@@ -1,0 +1,13 @@
+<div class="container shadow p-3">
+ <form [formGroup]="CreateForm" (ngSubmit)="Createemoloye()">
+     <input type="text" class="form-control" formControlName="Name" placeholder="Name" class="px-5 mx-4"> 
+     <input type="number" class="form-control" formControlName="Age" placeholder=" Age"  class="px-5 mx-4"> 
+     <input type="text" class="form-control" formControlName="Address" placeholder="Address" class="px-5 mx-4">
+     <input type="text" class="form-control" formControlName="PhoneNumber" placeholder="PhoneNumber" class="px-5 mx-4">
+
+     <div class="container m-5">
+         <button class="btn btn-info mx-5 px-5 " type="submit"  >Create</button>
+     
+     </div>
+ </form>
+</div>

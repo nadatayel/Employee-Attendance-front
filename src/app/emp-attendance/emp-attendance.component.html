@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="row">
+            <table class="table table-bordered shadow">
+                <thead>
+                   <tr>
+                    <th>
+                        ID
+                      </th>
+                     
+                      <th colspan="2">
+                          Attendance 
+                      </th>
+
+                   </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                             <td >
+                                 {{id}}
+                             </td>  
+                             <td>
+                              
+
+                            
+                                
+
+                                </td>
+                            </tr>
+
+                               
+                        
+                </tbody>
+            </table> -->
+            <div class="container shadow p-3" >
+                <form [formGroup]="attendform" (ngSubmit)="createAttend()">
+                    <div>
+                        <label>id=</label>
+                    <label>{{id}}</label>
+                    </div>
+                    <label>
+                        Attendance :
+                    </label>
+                    <label>
+                        {{attendform.value.attendance}}
+                    </label>
+                    <input type="time" formControlName="attendance"   >
+                    
+                    <label>
+                        Leave :
+                    </label>
+                    <label>
+                        {{attendform.value.leaving}}
+                    </label>
+                   
+                    <input type="time" formControlName="leaving" >
+                    
+                    <button class="btn btn-success" type="submit">Save</button>
+
+                </form>
+            </div>
+        </div>
+       
+</body>
+</html>

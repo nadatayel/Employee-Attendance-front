@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+<body>
+    <!-- <nav class="navbar navbar-expand-lg  bg-transparent py-3">
+        <div class="container">
+               
+             
+               <div class="collapse navbar-collapse" id="navbarSupportedContent" style="direction: rtl;">
+                 <input type="search" /><span>Search</span>
+                   
+                </div>
+           </div>
+             </nav>
+        -->
+    <div *ngIf="emplist" class="container">
+        <table class="table m-5 mx-4 shadow" >
+            <thead>
+                <tr >
+                    <th>
+                        ID
+                    </th>
+                    <th >
+                        Name
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Phone Number
+                    </th>
+                    <th colspan="2" style="text-align: center;">
+                        Operations
+                    </th>
+                    </tr>
+            </thead>
+            <tbody>
+                <!-- *ngFor="let item of lists.result| paginate: { itemsPerPage: 4, currentPage: p }" -->
+                <tr  *ngFor="let item of emplist
+                     
+                     | paginate: { itemsPerPage: 10, currentPage: p }" >
+                     
+                    <td> {{item.id}} </td>
+
+                  <td> {{item.name}} </td>
+                  <td>{{item.address}}</td>
+                   <td>{{item.phoneNumber}} </td>
+            
+                
+                  <td >
+                    <button  class="btn btn-info" [formGroup]="attendform"    [routerLink]="['/attendance', item.id]" >Attendance   </button>
+                    
+                    <button  class="btn btn-danger" (click)="DeletebyId(item.id)" > Delete </button>
+                    </td>
+                </tr>
+        </tbody>
+
+        </table>
+        
+
+<div class="container m-5 ">
+<div>
+    <button  class="btn btn-success " [routerLink]="['/createAttend']"   >Add Employee   </button>
+
+</div>    <div class="pag">
+        <pagination-controls class="text-center current" (pageChange)="p = $event"></pagination-controls>
+    </div>
+
+</div>
+
+        
+    </div>
+    
+</body>
+</html>
+<!-- <app-emp-attendance></app-emp-attendance> -->
